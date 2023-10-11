@@ -37,7 +37,7 @@ export default function Page() {
           className="text-black border-2 border-slate-300 pl-5 pr-5 pt-2 pb-2 text-sm"
           placeholder="Password"
         />
-        <input type="submit" value="Sign in" className="mt-5 mb-3 bg-green-400 text-white pt-2 pb-2 pl-5 pr-5" />
+        <input type="submit" value="Sign in" className="mt-5 mb-3 bg-green-400 text-white pt-2 pb-2 pl-5 pr-5 hover:cursor-pointer" />
       </form>
       
       <div className="flex-row flex">
