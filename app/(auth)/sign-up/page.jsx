@@ -3,20 +3,27 @@ import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Page() {
-  const [failed, setFailed] = useState(false);
+  const router = useRouter();
+
+  const [failed, setFailed] = useState("");
+
   async function submitHandler(formData) {
     const data = {
       email: formData.get("email"),
       password: formData.get("password"),
       confirm: formData.get("confirm"),
     };
+
     const response = await axios.post("/sign-up/api", data);
+    console.log(response);
     setFailed(response.data.fail);
+    if (response.data.message.length > 0) router.push("/login");
   }
   return (
-    <div className="flex flex-col justify-center w-1/4 border-2 border-black p-5 ml-auto mr-auto relative top-1/3 -translate-y-1/2 pl-7 pr-7">
+    <div className="relative ml-auto mr-auto mt-10 flex w-1/4 flex-col justify-center border-2 border-black p-5 pl-7 pr-7">
       <Image
         src="/icon.svg"
         alt="icon"
@@ -24,13 +31,13 @@ export default function Page() {
         height={90}
         className="self-center"
       ></Image>
-      <span className="self-center text-xl mt-2 mb-5">Obesity Controller</span>
+      <span className="mb-5 mt-2 self-center text-xl">Obesity Controller</span>
       <form className="flex flex-col justify-center" action={submitHandler}>
         <input
           type="email"
           name="email"
           id="email"
-          className="text-black border-2 border-slate-300 pl-5 pr-5 pt-2 pb-2  mb-5 text-sm"
+          className="mb-5 border-2 border-slate-300 pb-2 pl-5 pr-5 pt-2  text-sm text-black"
           placeholder="Email"
         />
 
@@ -38,26 +45,26 @@ export default function Page() {
           type="password"
           name="password"
           id="password"
-          className="text-black border-2 border-slate-300 pl-5 pr-5 pt-2 pb-2 mb-5 text-sm"
+          className="mb-5 border-2 border-slate-300 pb-2 pl-5 pr-5 pt-2 text-sm text-black"
           placeholder="Password"
         />
         <input
           type="password"
           name="confirm"
           id="confirm"
-          className="text-black border-2 border-slate-300 pl-5 pr-5 pt-2 pb-2 text-sm"
+          className="border-2 border-slate-300 pb-2 pl-5 pr-5 pt-2 text-sm text-black"
           placeholder="Confirm password"
         />
         <input
           type="submit"
           value="Sign up"
-          className="mt-5 mb-3 bg-green-400 text-white pt-2 pb-2 pl-5 pr-5 hover:cursor-pointer"
+          className="mb-3 mt-5 bg-green-400 pb-2 pl-5 pr-5 pt-2 text-white hover:cursor-pointer"
         />
       </form>
-      {failed && (
-        <span className="text-red-500 text-center">Sign up failed</span>
+      {failed.length > 0 && (
+        <span className="text-center text-sm text-red-500">{failed}</span>
       )}
-      <span className="text-center">
+      <span className="text-center text-sm">
         Have an account?{" "}
         <Link href="/login" className="text-green-500">
           Sign in

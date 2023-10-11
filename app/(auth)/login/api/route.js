@@ -1,24 +1,34 @@
-import { NextRequest } from "next/server";
 import { connectDatabase } from "@/util/connect-db";
-const users = [
-    {
-        email: "sonanhnguyen003@gmail.com",
-        password: "1234"
-    }
-]
+import User from "@/schemas/User";
+import bcryptjs from 'bcryptjs';
+import jwt from 'jsonwebtoken'
+connectDatabase();
+
 export async function GET(request) {
 
     console.log(request);
 }
 export async function POST(request) {
     const reqBody = await request.json();
-    let authenticated = false;
     const { email, password } = reqBody;
-    const user = users.find((user) => user.email === email)
-    if (user != undefined) {
-        if (user.password === password)
-            authenticated = true;
+    const user = await User.findOne({ email });
+    if (!user) {
+        return Response.json({
+            status: 400,
+            message: "User does not exist"
+        })
     }
-    return Response.json({ status: 200, authenticate: authenticated });
+    const validPassword = await bcryptjs.compare(password, user.password);
+    if (!validPassword)
+        return Response.json({
+            status: 400,
+            message: "Invalid password"
+        })
 
+    const tokenData = {
+        id: user._id,
+        email: user.email
+    }
+
+    
 }
