@@ -2,10 +2,9 @@
 import axios from "axios";
 import Link from "next/link";
 import Image from "next/image";
-
+import { useRouter } from "next/navigation";
 export default function Page() {
-
-  
+  const router = useRouter();
   async function submitHandler(formData) {
     console.log(formData);
     const data = {
@@ -14,12 +13,16 @@ export default function Page() {
     };
     try {
       const response = await axios.post("/login/api/", data);
-      console.log("Response data:", response.data);
+      const resData = response.data;
+      const { message, success } = resData;
+      console.log(`${message}, ..., ${success}`);
+      if (success) {
+        router.push("/dashboard");
+      }
     } catch (error) {
       console.error("Error:", error);
     }
   }
-
 
   return (
     <div className="relative ml-auto mr-auto mt-10 flex w-1/4 flex-col justify-center border-2 border-black p-5 pl-7 pr-7">
