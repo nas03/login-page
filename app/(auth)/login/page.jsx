@@ -3,6 +3,8 @@ import axios from "axios";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react"
+
 export default function Page() {
   const router = useRouter();
   async function submitHandler(formData) {
@@ -17,6 +19,7 @@ export default function Page() {
       const { message, success } = resData;
       console.log(`${message}, ..., ${success}`);
       if (success) {
+        
         router.push("/dashboard");
       }
     } catch (error) {
