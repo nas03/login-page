@@ -14,7 +14,7 @@ export default function Page() {
       password: formData.get("password"),
     };
     try {
-      const response = await axios.post("/login/api/", data);
+      const response = await axios.post("/api/login", data);
       const resData = response.data;
       const { message, success } = resData;
       console.log(`${message}, ..., ${success}`);

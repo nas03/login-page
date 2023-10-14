@@ -17,7 +17,7 @@ export default function Page() {
       confirm: formData.get("confirm"),
     };
 
-    const response = await axios.post("/sign-up/api", data);
+    const response = await axios.post("/api/sign-up", data);
     console.log(response);
     setFailed(response.data.fail);
     if (response.data.message.length > 0) router.push("/login");
