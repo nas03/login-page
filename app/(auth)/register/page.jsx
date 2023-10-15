@@ -4,8 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { redirect } from "next/navigation";
+import { authOptions } from "../api/auth/[...nextauth]/route";
 
-export default function Page() {
+export default async function Page() {
+  const session = await getServerSession(authOptions);
+
+  if (session) redirect("/dashboard");
   const router = useRouter();
 
   const [failed, setFailed] = useState("");
@@ -17,10 +22,10 @@ export default function Page() {
       confirm: formData.get("confirm"),
     };
 
-    const response = await axios.post("/api/sign-up", data);
+    const response = await axios.post("/api/register", data);
     console.log(response);
     setFailed(response.data.fail);
-    if (response.data.message.length > 0) router.push("/login");
+    if (response.data.message.length > 0) router.push("/");
   }
   return (
     <div className="relative ml-auto mr-auto mt-10 flex w-1/4 flex-col justify-center border-2 border-black p-5 pl-7 pr-7">

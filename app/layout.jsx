@@ -1,7 +1,7 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import NavigationBar from "@/components/NavigationBar";
-import { SessionProvider } from "@/components/Session";
+import {AuthProvider} from "@/components/SessionProviders";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -12,12 +12,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="h-screen">
-      <SessionProvider>
-        <body className={inter.className}>
+      <body className={inter.className}>
+        <AuthProvider>
           <NavigationBar />
           {children}
-        </body>
-      </SessionProvider>
+        </AuthProvider>
+      </body>
     </html>
   );
 }
