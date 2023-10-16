@@ -1,10 +1,10 @@
-import { connectDatabase } from "@/util/connect-db";
+import { connectMongoDB } from "@/util/connect-db";
 import User from "@/schemas/User";
 import bcryptjs from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 import { NextResponse } from "next/server";
 
-connectDatabase();
+connectMongoDB();
 
 export async function POST(request) {
     const requestBody = await request.json();

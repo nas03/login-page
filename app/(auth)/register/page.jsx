@@ -3,12 +3,12 @@ import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { redirect } from "next/navigation";
-import { authOptions } from "../api/auth/[...nextauth]/route";
 
-export default async function Page() {
-  const session = await getServerSession(authOptions);
+export default function Page() {
+  const session = useSession();
 
   if (session) redirect("/dashboard");
   const router = useRouter();

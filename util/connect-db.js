@@ -1,6 +1,10 @@
-import mongoose from "mongoose";
+import mongoose, { connection } from "mongoose";
+import getConfig from "next/config";
+import mysql from 'mysql2'
+import Bluebird from "bluebird";
 
-export async function connectDatabase() {
+
+export async function connectMongoDB() {
     try {
         mongoose.connect(process.env.MONGO_URI);
         const connection = mongoose.connection;
@@ -20,3 +24,19 @@ export async function connectDatabase() {
 
     }
 }
+
+export function connectMySQL() {
+    const { serverRuntimeConfig } = getConfig();
+    const { host, port, user, password, database } = serverRuntimeConfig.mysql;
+    
+    try {
+        const mySQLConnection =  mysql.createConnection({ host, port, user, password });
+        mySQLConnection.query(`USE ${database}`);
+        console.log("Connect MySqL successfully")
+        return mySQLConnection;
+    } catch (error) {
+        console.log("MySQL Error:", error)
+    }
+    return null;
+}
+
