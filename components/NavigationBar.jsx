@@ -7,7 +7,6 @@ import { sign } from "jsonwebtoken";
 
 export default function NavigationBar() {
   const { data: session } = useSession();
-  console.log("Session", session);
 
   return (
     <>

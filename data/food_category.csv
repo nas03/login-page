@@ -1,3 +1,4 @@
-id,category,name,display,description,image_url
-1,"potato","soup","potato","potato is good","https://example.com"
-2,"potato","soup","potato","potato is good","https://example.com"
+id,category,name,description,image_url
+1,"Fruits and Vegetables","Potatoes and Potatoes Product","Potatoes are very high in vitamin C, their skins are packed with fiber and, although they are higher in carbs, these starchy complex carbohydrates are converted into energy ","/images/potato-products.webp"
+2,"Fruits and Vegetables","Vegetables and Legumes","Vegetables are a great high volume, low calorie option. You can eat a lot of them, they’re satiating and packed with vitamins","/images/vegetables-legumes.webp"
+Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`food`.`food_category`, CONSTRAINT `food_category_ibfk_1` FOREIGN KEY (`category`) REFERENCES `display_category` (`category`))
