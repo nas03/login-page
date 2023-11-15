@@ -1,10 +1,12 @@
 "use client";
-import "./style.css";
+import "./loginForm.css";
 import Link from "next/link";
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+
+
 export default function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -27,7 +29,7 @@ export default function LoginForm() {
         return;
       }
 
-      router.replace("dashboard");
+      router.replace("dashboard/home");
     } catch (error) {
       console.log(error);
     }
@@ -71,7 +73,7 @@ export default function LoginForm() {
           className="mb-3 mt-5 pb-2 pl-5 pr-5 pt-2 hover:cursor-pointer"
           style={{
             background: "var(--dark-green-20, #234338)",
-            color: "var(--green-97, #FAFDF2);",
+            color: "var(--green-97, #FAFDF2) !important",
           }}
         >
           Sign in

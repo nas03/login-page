@@ -1,0 +1,96 @@
+.hero-section {
+  display: flex;
+  width: 100%;
+  padding-right: 0px;
+  align-items: center;
+  gap: 2.5rem;
+}
+.hero-pic-1 {
+  width: 44.375rem;
+  height: 44.5rem;
+  flex-shrink: 0;
+  border-radius: 0rem 0rem 3.125rem 0rem;
+  background:
+    url("/images/home-pic1.png"),
+    lightgray 50% / cover no-repeat,
+    url("/images/home-pic1.png"),
+    lightgray 0% 0% / 80.0000011920929px 80.0000011920929px repeat,
+    #dcf1a7;
+}
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3.125rem;
+  flex: 1 0 0;
+}
+.hero-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2.5rem;
+  align-self: stretch;
+}
+.hero-title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  align-self: stretch;
+}
+.hero-top-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.625rem;
+  align-self: stretch;
+}
+.hero-title {
+  display: flex;
+  padding: 0.5rem 0rem;
+  align-items: center;
+  gap: 0.625rem;
+  border-bottom: 3px solid var(--green-70, #cbea7b);
+}
+.hero-heading {
+  align-self: stretch;
+  color: var(--dark-green-15, #1a3129);
+  font-family: Urbanist;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+hero-heading-content {
+  align-self: stretch;
+  color: var(--grey-20, 0.333);
+  font-family: Urbanist;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 1.5rem */
+}
+.hero-buttons-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+}
+.hero-buttons-container :nth-child(1) {
+  display: flex;
+  padding: 0.875rem 1rem;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.375rem;
+  background: var(--green-70, #cbea7b);
+  color: var(--grey-15, 0.262626);
+}
+.hero-buttons-container :nth-child(2) {
+  display: flex;
+  padding: 0.875rem 1.25rem;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.375rem;
+  border: 1px solid var(--green-85, #e5f5bd);
+  color: var(--grey-15, 0.262626);
+  background: var(--green-95, #f6fbe9);
+}

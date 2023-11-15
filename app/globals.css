@@ -5,5 +5,5 @@
 
 body {
     height: 100vh;
-    background: var(--green-97, #FAFDF2);
+    background: var(--green-97, #FAFDF2) !important;
 }

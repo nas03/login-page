@@ -3,6 +3,7 @@
     width: 100%;
     flex-direction: column;
     align-items: flex-start;
+    position: sticky;
 }
 
 .top-banner {
@@ -67,9 +68,9 @@
     align-items: center;
     gap: 20px;
     list-style: none;
-    color: var(--green-97, #FAFDF2);
     font-weight: 600;
     line-height: 150%;
+    color: var(--grey-15, #262626);
 }
 
 .session-btn {
@@ -78,5 +79,6 @@
     align-items: center;
     gap: 8px;
     border-radius: 6px;
+    color: var(--grey-15, #262626);
     background: var(--green-70, #CBEA7B);
 }
