@@ -1,5 +1,5 @@
 "use client";
-
+import "./style.css";
 import Link from "next/link";
 import { useState } from "react";
 import { signIn } from "next-auth/react";
@@ -34,15 +34,21 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="relative ml-auto mr-auto mt-10 flex w-1/4 flex-col justify-center border-2 border-black p-5 pl-7 pr-7">
+    <div className="login-form relative ml-auto mr-auto mt-10 flex flex-col justify-center border-2 border-black p-5 pl-7 pr-7">
       <Image
-        src="/icon.svg"
+        src="/svg/logo.svg"
         alt="icon"
-        width={90}
-        height={90}
-        className="self-center"
-      ></Image>
-      <span className="mt-2 self-center text-xl">Obesity Controller</span>
+        width={50}
+        height={50}
+        className="self-center pb-5 pt-3"
+      />
+      <Image
+        className="scale-125 self-center pb-3"
+        src="/svg/dark-logo-name.svg"
+        width={108}
+        height={14}
+        alt="logo-name"
+      />
       <form className="flex flex-col justify-center" onSubmit={handleSubmit}>
         <input
           type="text"
@@ -61,7 +67,13 @@ export default function LoginForm() {
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button className="mb-3 mt-5 bg-green-400 pb-2 pl-5 pr-5 pt-2 text-white hover:cursor-pointer">
+        <button
+          className="mb-3 mt-5 pb-2 pl-5 pr-5 pt-2 hover:cursor-pointer"
+          style={{
+            background: "var(--dark-green-20, #234338)",
+            color: "var(--green-97, #FAFDF2);",
+          }}
+        >
           Sign in
         </button>
       </form>
@@ -74,11 +86,20 @@ export default function LoginForm() {
       <div className="flex flex-row">
         <Link
           href="/forgot-password"
-          className="place-self-start text-sm text-green-400"
+          className="place-self-start text-sm "
+          style={{
+            color: "var(--dark-green-20, #234338)",
+          }}
         >
           Forgot password?
         </Link>
-        <Link className="ml-auto text-sm text-green-500" href="/sign-up">
+        <Link
+          className="ml-auto text-sm "
+          href="/sign-up"
+          style={{
+            color: "var(--dark-green-20, #234338)",
+          }}
+        >
           Sign up
         </Link>
       </div>
