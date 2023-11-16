@@ -1,0 +1,8 @@
+INSERT INTO food_list (food_type, name, calories) VALUES ('Potatoes and Product', 'Mashed Potatoes', 150);
+INSERT INTO food_list (food_type, name, calories) VALUES ('Vegetables and Legume', 'Mixed Vegetable Salad', 100);
+INSERT INTO food_list (food_type, name, calories) VALUES ('Fruits and Berries', 'Berry Smoothie', 200);
+INSERT INTO food_list (food_type, name, calories) VALUES ('Meat', 'Grilled Chicken Breast', 300);
+INSERT INTO food_list (food_type, name, calories) VALUES ('Fish and Seafood', 'Baked Salmon', 250);
+INSERT INTO food_list (food_type, name, calories) VALUES ('Dairy Products', 'Greek Yogurt', 120);
+INSERT INTO food_list (food_type, name, calories) VALUES ('Beverages', 'Green Tea', 0);
+INSERT INTO food_list (food_type, name, calories) VALUES ('Sweets and Desserts', 'Chocolate Cake', 400);

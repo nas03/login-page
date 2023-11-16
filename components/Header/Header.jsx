@@ -1,17 +1,16 @@
 "use client";
-import "./header.css";
 import Link from "next/link";
 import Image from "next/image";
-
+import styles from './styles.module.css'
 import { signOut, useSession } from "next-auth/react";
 import { sign } from "jsonwebtoken";
 
 export default function Header() {
   const { data: session } = useSession();
   return (
-    <div className="header">
-      <div className="nav-bar">
-        <div className="logo">
+    <div className={styles.header}>
+      <div className={styles["nav-bar"]}>
+        <div className={styles.logo}>
           <Image src="/svg/logo.svg" width={34} height={34} alt="logo" />
           <Image
             src="/svg/logo-name.svg"
@@ -20,8 +19,8 @@ export default function Header() {
             alt="logo-name"
           />
         </div>
-        <div className="container">
-          <ul className="buttons-container">
+        <div className={styles.container}>
+          <ul className={styles["buttons-container"]}>
             <li>
               <Link href="/dashboard/home">Home</Link>
             </li>
@@ -33,12 +32,12 @@ export default function Header() {
             </li>
           </ul>
           {!session ? (
-            <button className="session-btn">
+            <button className={styles["session-btn"]}>
               <Link href="/login">Sign in</Link>
             </button>
           ) : (
             <button
-              className="session-btn"
+              className={styles["session-btn"]}
               onClick={() => {
                 signOut();
                 console.log("Sign out", session);

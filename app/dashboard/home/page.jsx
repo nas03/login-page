@@ -1,27 +1,29 @@
+// Importing necessary modules
 import Header from "@/components/Header/Header";
 import Image from "next/image";
-import "./style.css";
+import styles from './styles.module.css';
+
 export default function Home() {
   return (
     <>
-      <div id="hero" className="hero-section">
+      <div id={styles.hero} className={styles["section"]}>
         <Image
-          className="hero-pic-1"
+          className={styles["pic-1"]}
           src="/images/home-pic1.png"
           width={710}
           height={712}
           alt="minh hoa"
         />
-        <div className="hero-container">
-          <div className="hero-content-container">
-            <div className="hero-title-container">
-              <div className="hero-top-title">
-                <div className="hero-title">
+        <div className={styles.container}>
+          <div className={styles["content-container"]}>
+            <div className={styles["title-container"]}>
+              <div className={styles["top-title"]}>
+                <div className={styles["title"]}>
                   <p>Transform Your ❤️ Health with</p>
                 </div>
-                <p className="hero-heading">Personalized Nutrition Coaching</p>
+                <p className={styles["heading"]}>Personalized Nutrition Coaching</p>
               </div>
-              <p className="hero-heading-content">
+              <p className={styles["heading-content"]}>
                 Welcome to Nutritionist, your partner in achieving optimal
                 health through personalized nutrition coaching. Our certified
                 nutritionists are here to guide you on your weight loss journey,
@@ -29,8 +31,8 @@ export default function Home() {
                 transformation today and experience the power of personalized
                 nutrition coaching.
               </p>
-              <div className="hero-buttons-container">
-                <button>Get Starter Today</button>
+              <div className={styles["buttons-container"]}>
+                <button>Get Started Today</button>
                 <button>Book a Demo</button>
               </div>
             </div>

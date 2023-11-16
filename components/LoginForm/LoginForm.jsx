@@ -1,11 +1,10 @@
 "use client";
-import "./loginForm.css";
+import styles from "./styles.module.css";
 import Link from "next/link";
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
@@ -36,7 +35,7 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="login-form relative ml-auto mr-auto mt-10 flex flex-col justify-center border-2 border-black p-5 pl-7 pr-7">
+    <div className={styles["login-form"]} >
       <Image
         src="/svg/logo.svg"
         alt="icon"

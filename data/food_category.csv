@@ -1,3 +1,8 @@
-id,category,name,description,image_url
-1,"Fruits & Vegetables","Potatoes and Potatoes Product","Potatoes are very high in vitamin C, their skins are packed with fiber and, although they are higher in carbs, these starchy complex carbohydrates are converted into energy ","/images/potato-products.webp"
-2,"Fruits & Vegetables","Vegetables and Legumes","Vegetables are a great high volume, low calorie option. You can eat a lot of them, they’re satiating and packed with vitamins","/images/vegetables-legumes.webp"
+INSERT INTO food_category (category, food_type, description, image_url) VALUES ('Fruits & Vegetables', 'Potatoes and Product', 'Description1', '/images/potatoes.jpg');
+INSERT INTO food_category (category, food_type, description, image_url) VALUES ('Fruits & Vegetables', 'Vegetables and Legume', 'Description2', '/images/vegetables.jpg');
+INSERT INTO food_category (category, food_type, description, image_url) VALUES ('Fruits & Vegetables', 'Fruits and Berries', 'Description3', '/images/fruits.jpg');
+INSERT INTO food_category (category, food_type, description, image_url) VALUES ('Meat', 'Meat', 'Description4', '/images/meat.jpg');
+INSERT INTO food_category (category, food_type, description, image_url) VALUES ('Fish & Seafood', 'Fish and Seafood', 'Description5', '/images/seafood.jpg');
+INSERT INTO food_category (category, food_type, description, image_url) VALUES ('Milk & Dairy Products', 'Dairy Products', 'Description6', '/images/dairy.jpg');
+INSERT INTO food_category (category, food_type, description, image_url) VALUES ('Drinks & Beverage', 'Beverages', 'Description7', '/images/beverages.jpg');
+INSERT INTO food_category (category, food_type, description, image_url) VALUES ('Candy & Sweets', 'Sweets and Desserts', 'Description8', '/images/sweets.jpg');
