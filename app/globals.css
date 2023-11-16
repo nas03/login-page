@@ -1,9 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 body {
-    height: 100vh;
-    background: var(--green-97, #FAFDF2) !important;
+  height: 100vh;
+  background: var(--green-97, #fafdf2) !important;
 }

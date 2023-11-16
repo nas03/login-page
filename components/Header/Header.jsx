@@ -28,7 +28,7 @@ export default function Header() {
               <Link href="/dashboard/about">About</Link>
             </li>
             <li>
-              <Link href="/dashboard/food">Food</Link>
+              <Link href="/dashboard/food-list">Food</Link>
             </li>
           </ul>
           {!session ? (

@@ -1,4 +1,4 @@
-INSERT INTO food_category (category, food_type, description, image_url) VALUES ('Fruits & Vegetables', 'Potatoes and Product', 'Description1', '/images/potatoes.jpg');
+INSERT INTO food_category (category, food_type, description, image_url) VALUES ('Fruits & Vegetables', 'Potatoes and Product', 'Potatoes are very high in vitamin C, their skins are packed with fiber and, although they are higher in carbs, these starchy complex carbohydrates are converted into energy and will keep you feeling fuller for longer. Check out our Potatoes and Potato Products Calorie Chart below for more nutritional information.', '/images/potatoes.jpg');
 INSERT INTO food_category (category, food_type, description, image_url) VALUES ('Fruits & Vegetables', 'Vegetables and Legume', 'Description2', '/images/vegetables.jpg');
 INSERT INTO food_category (category, food_type, description, image_url) VALUES ('Fruits & Vegetables', 'Fruits and Berries', 'Description3', '/images/fruits.jpg');
 INSERT INTO food_category (category, food_type, description, image_url) VALUES ('Meat', 'Meat', 'Description4', '/images/meat.jpg');

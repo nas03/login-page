@@ -34,9 +34,7 @@ const Category = ({ category }) => (
     <p className={`${foodStyles["category-title"]} dark-gray text-3xl`}>
       {category.category}
     </p>
-    <div
-      className={`${foodStyles["category-food-container"]} dark-gray`}
-    >
+    <div className={`${foodStyles["category-food-container"]} dark-gray`}>
       {category.category && <Food category={category.category} />}
     </div>
   </div>
@@ -59,24 +57,19 @@ async function Food({ category }) {
 }
 
 const FoodItem = ({ data }) => (
-  <div
-    className={`${foodStyles["food-category-container"]} basis-1/3`}
-    key={data.id}
-  >
+  <a href={`/food-list/${data.food_type}`} className={`${foodStyles["food-category-container"]}`} key={data.id}>
     <Image
-      className={`${foodStyles["food-thumbnail"]} rounded-t-xl`}
+      className={`${foodStyles["food-thumbnail"]}`}
       src={data.image_url}
-      alt={data.name}
+      alt={data.food_type}
       height={100}
       width={200}
     />
     <div className={`${foodStyles["food-category-content"]} dark-gray`}>
-      <p className={`${foodStyles["food-category-items"]} dark-gray`}>
-        {data.name}
-      </p>
-      <p className="dark-gray line-clamp-3">{data.description}</p>
+      <p className="">{data.food_type}</p>
+      <p className="">{data.description}</p>
     </div>
-  </div>
+  </a>
 );
 
 export default async function FoodList() {
@@ -87,7 +80,7 @@ export default async function FoodList() {
   console.log(categories);
 
   return (
-    <div>
+    <div className="w-full">
       {categories.map((category) => (
         <Category key={category.id} category={category} />
       ))}
