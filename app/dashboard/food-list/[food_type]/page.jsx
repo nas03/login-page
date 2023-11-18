@@ -28,11 +28,11 @@ export default async function FoodCategory({ params }) {
   console.log(params.food_type)
   const data = await getQueryData(
     `SELECT name
-      FROM food_list
-      WHERE food_type = 
-      (SELECT food_type 
-        FROM food_category 
-        WHERE food_category.food_type = '${decodeURIComponent(
+      FROM food
+      WHERE slug = 
+      (SELECT slug 
+        FROM sub_category 
+        WHERE sub_category.slug = '${decodeURIComponent(
           params.food_type,
         )}'); `,
   );

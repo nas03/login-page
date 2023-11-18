@@ -32,17 +32,18 @@ async function getQueryData(query) {
 const Category = ({ category }) => (
   <div className={foodStyles["category-container"]} key={category.id}>
     <p className={`${foodStyles["category-title"]} dark-gray text-3xl`}>
-      {category.category}
+      {category.main_category}
     </p>
     <div className={`${foodStyles["category-food-container"]} dark-gray`}>
-      {category.category && <Food category={category.category} />}
+      {category.main_category && <Food category={category.main_category} />}
     </div>
   </div>
 );
 
 async function Food({ category }) {
-  
-  const data = await getQueryData(`SELECT * FROM food_category WHERE category = '${category}';`);
+  const data = await getQueryData(
+    `SELECT * FROM sub_category WHERE main_category = '${category}';`,
+  );
 
   return (
     <>
@@ -54,16 +55,20 @@ async function Food({ category }) {
 }
 
 const FoodItem = ({ data }) => (
-  <a href={`/dashboard/food-list/${data.food_type}`} className={`${foodStyles["food-category-container"]}`} key={data.id}>
+  <a
+    href={`/dashboard/food-list/${data.slug}`}
+    className={`${foodStyles["food-category-container"]}`}
+    key={data.id}
+  >
     <Image
       className={`${foodStyles["food-thumbnail"]}`}
-      src={data.image_url}
-      alt={data.food_type}
+      src={`/images/${data.slug}.webp`}
+      alt={data.slug}
       height={100}
       width={200}
     />
     <div className={`${foodStyles["food-category-content"]} dark-gray`}>
-      <p className="">{data.food_type}</p>
+      <p className="">{data.sub_category}</p>
       <p className="">{data.description}</p>
     </div>
   </a>
@@ -71,13 +76,12 @@ const FoodItem = ({ data }) => (
 
 export default async function FoodList() {
   const data = await getQueryData(
-    "SELECT * FROM food.display_category ORDER BY id ASC",
+    "SELECT * FROM food.main_category ORDER BY id ASC",
   );
-  const categories = Array.from(data);
 
   return (
     <div className="w-full">
-      {categories.map((category) => (
+      {data.map((category) => (
         <Category key={category.id} category={category} />
       ))}
     </div>
