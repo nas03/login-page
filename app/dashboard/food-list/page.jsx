@@ -41,11 +41,8 @@ const Category = ({ category }) => (
 );
 
 async function Food({ category }) {
-  const query = `SELECT * FROM food_category WHERE category = '${category}';`;
-  console.log(query);
-  const datas = await getQueryData(query);
-  const data = Array.from(datas);
-  console.log(data);
+  
+  const data = await getQueryData(`SELECT * FROM food_category WHERE category = '${category}';`);
 
   return (
     <>
@@ -57,7 +54,7 @@ async function Food({ category }) {
 }
 
 const FoodItem = ({ data }) => (
-  <a href={`/food-list/${data.food_type}`} className={`${foodStyles["food-category-container"]}`} key={data.id}>
+  <a href={`/dashboard/food-list/${data.food_type}`} className={`${foodStyles["food-category-container"]}`} key={data.id}>
     <Image
       className={`${foodStyles["food-thumbnail"]}`}
       src={data.image_url}
@@ -77,7 +74,6 @@ export default async function FoodList() {
     "SELECT * FROM food.display_category ORDER BY id ASC",
   );
   const categories = Array.from(data);
-  console.log(categories);
 
   return (
     <div className="w-full">

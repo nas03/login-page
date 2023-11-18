@@ -52,7 +52,7 @@
     gap: 5.879px;
 }
 
-.nav-bar>.container {
+.container {
     display: flex;
     justify-content: flex-end;
     align-items: center;
