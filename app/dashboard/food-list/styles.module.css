@@ -13,7 +13,6 @@
 .category-food-container {
   margin-top: 2rem;
   position: relative;
-
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -35,7 +34,7 @@
   display: flex;
   flex-direction: column;
   height: 30rem;
-  width: 23rem;
+  width: 25rem;
 }
 .food-thumbnail {
   height: 60%;

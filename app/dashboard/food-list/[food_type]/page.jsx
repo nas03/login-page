@@ -1,5 +1,6 @@
 import mysql from "mysql2/promise";
 import getConfig from "next/config";
+import style from './styles.module.css'
 const { serverRuntimeConfig } = getConfig();
 const { host, port, user, password, database } = serverRuntimeConfig.mysql;
 
@@ -24,6 +25,7 @@ async function getQueryData(query) {
   }
 }
 export default async function FoodCategory({ params }) {
+  console.log(params.food_type)
   const data = await getQueryData(
     `SELECT name
       FROM food_list
@@ -34,6 +36,7 @@ export default async function FoodCategory({ params }) {
           params.food_type,
         )}'); `,
   );
+  console.log(data);
   return (
     <>
       {data.map((food) => (

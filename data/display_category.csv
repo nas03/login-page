@@ -1,8 +1,10 @@
-INSERT INTO display_category (id, category) VALUES (1, 'Fruits & Vegetables');
-INSERT INTO display_category (id, category) VALUES (2, 'Milk & Dairy Products');
-INSERT INTO display_category (id, category) VALUES (3, 'Meat');
-INSERT INTO display_category (id, category) VALUES (4, 'Cereal Products');
-INSERT INTO display_category (id, category) VALUES (5, 'Fish & Seafood');
-INSERT INTO display_category (id, category) VALUES (6, 'Drinks & Beverage');
-INSERT INTO display_category (id, category) VALUES (7, 'Candy & Sweets');
-INSERT INTO display_category (id, category) VALUES (8, 'Oils, Fat & Nuts');
+INSERT INTO main_category (id, category) 
+VALUES 
+  (1, 'Fruits & Vegetables'),
+  (2, 'Milk & Dairy Products'),
+  (3, 'Meat'),
+  (4, 'Cereal Products'),
+  (5, 'Fish & Seafood'),
+  (6, 'Drinks & Beverage'),
+  (7, 'Candy & Sweets'),
+  (8, 'Oils, Fat & Nuts');
