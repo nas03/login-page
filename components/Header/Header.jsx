@@ -33,7 +33,7 @@ export default function Header() {
           </ul>
           {!session ? (
             <button className={styles["session-btn"]}>
-              <Link href="/login">Sign in</Link>
+              <Link href="/auth/login">Sign in</Link>
             </button>
           ) : (
             <button

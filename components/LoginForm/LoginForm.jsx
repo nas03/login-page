@@ -96,7 +96,7 @@ export default function LoginForm() {
         </Link>
         <Link
           className="ml-auto text-sm "
-          href="/sign-up"
+          href="/auth/register"
           style={{
             color: "var(--dark-green-20, #234338)",
           }}

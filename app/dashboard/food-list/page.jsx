@@ -1,9 +1,11 @@
 // Importing necessary modules
 import { useSession } from "next-auth/react";
 import foodStyles from "./styles.module.css"; // Update this with the correct path to your CSS module
-
+import Link from "next/link";
 import Image from "next/image";
 import * as Prisma from "@/prisma/PrismaServices";
+import { cache } from "react";
+export const revalidate = 3600;
 
 const Category = ({ category }) => (
   <div className={foodStyles["category-container"]} key={category.id}>
@@ -28,10 +30,11 @@ async function Food({ category }) {
 }
 
 const FoodItem = ({ data }) => (
-  <a
+  <Link
     href={`/dashboard/food-list/${data.slug}`}
     className={`${foodStyles["food-category-container"]}`}
     key={data.id}
+    passHref
   >
     <Image
       className={`${foodStyles["food-thumbnail"]}`}
@@ -44,7 +47,7 @@ const FoodItem = ({ data }) => (
       <p className="">{data.sub_category}</p>
       <p className="">{data.description}</p>
     </div>
-  </a>
+  </Link>
 );
 
 export default async function FoodList() {
