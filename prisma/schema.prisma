@@ -1,0 +1,41 @@
+// prisma/schema.prisma
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/client"
+}
+
+// main_category.model.prisma
+model MainCategory {
+  id            Int       @id @default(autoincrement())
+  main_category String    @unique
+  subCategories SubCategory[]
+  @@map(name: "main_category")
+}
+
+// sub_category.model.prisma
+model SubCategory {
+  id            Int       @id @default(autoincrement())
+  main_category String
+  sub_category  String
+  description   String @db.Text
+  slug          String    @unique
+  mainCategory  MainCategory @relation(fields: [main_category], references: [main_category])
+  foods         Food[]
+  @@map(name: "sub_category")
+}
+
+// food.model.prisma
+model Food {
+  id           Int       @id @default(autoincrement())
+  slug         String
+  food         String
+  calories     Int
+  subCategory  SubCategory @relation(fields: [slug], references: [slug])
+  @@map(name: "food")
+}

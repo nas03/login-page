@@ -1,33 +1,9 @@
 // Importing necessary modules
 import { useSession } from "next-auth/react";
 import foodStyles from "./styles.module.css"; // Update this with the correct path to your CSS module
-import mysql from "mysql2/promise";
-import getConfig from "next/config";
+
 import Image from "next/image";
-
-const { serverRuntimeConfig } = getConfig();
-const { host, port, user, password, database } = serverRuntimeConfig.mysql;
-
-async function getQueryData(query) {
-  const connection = await mysql.createConnection({
-    host,
-    port,
-    user,
-    password,
-    database, // Add the database name here
-  });
-
-  try {
-    await connection.query(`USE ${database}`);
-    const [rows] = await connection.execute(query);
-    connection.end();
-    return rows;
-  } catch (error) {
-    console.error("Error fetching data:", error);
-    connection.end();
-    return [];
-  }
-}
+import * as Prisma from "@/prisma/PrismaServices";
 
 const Category = ({ category }) => (
   <div className={foodStyles["category-container"]} key={category.id}>
@@ -41,10 +17,7 @@ const Category = ({ category }) => (
 );
 
 async function Food({ category }) {
-  const data = await getQueryData(
-    `SELECT * FROM sub_category WHERE main_category = '${category}';`,
-  );
-
+  const data = await Prisma.getSubCategoriesByMainCategory(category);
   return (
     <>
       {data.map((data) => (
@@ -75,13 +48,11 @@ const FoodItem = ({ data }) => (
 );
 
 export default async function FoodList() {
-  const data = await getQueryData(
-    "SELECT * FROM food.main_category ORDER BY id ASC",
-  );
+  const prisma = await Prisma.getMainCategories();
 
   return (
     <div className="w-full">
-      {data.map((category) => (
+      {prisma.map((category) => (
         <Category key={category.id} category={category} />
       ))}
     </div>
