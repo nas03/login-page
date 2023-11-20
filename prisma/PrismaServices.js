@@ -1,5 +1,5 @@
 import { PrismaClient } from "./generated/client";
-import {cache} from "react";
+import { cache } from "react";
 
 export const revalidate = 3600;
 
@@ -13,6 +13,7 @@ export const createMainCategory = async (mainCategoryName) => {
         main_category: mainCategoryName,
       },
     });
+    cleanup();
   } catch (error) {
     console.error("Error creating main category:", error);
     throw error;
@@ -26,6 +27,7 @@ export const getMainCategories = cache(async () => {
         id: "asc",
       },
     });
+    cleanup();
   } catch (error) {
     console.error("Error fetching main categories:", error);
     throw error;
@@ -40,6 +42,7 @@ export const updateMainCategory = async (id, mainCategoryName) => {
         main_category: mainCategoryName,
       },
     });
+    cleanup();
   } catch (error) {
     console.error("Error updating main category:", error);
     throw error;
@@ -187,6 +190,24 @@ export const deleteFood = async (id) => {
   }
 };
 
+export const getSubcategoryBySlug = async (slug) => {
+  try {
+    return await prisma.subCategory.findFirst({
+      where: {
+        slug: {
+          equals: slug,
+        },
+      },
+      select: {
+        sub_category: true,
+        description: true,
+      },
+    });
+  } catch (error) {
+    console.error("Error get subCategory by slug", error);
+    throw error;
+  }
+};
 // Cleanup
 export const cleanup = async () => {
   try {

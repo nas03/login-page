@@ -1,0 +1,75 @@
+.container {
+  width: 80%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+.gridContainer {
+  height: 45rem;
+  margin: 0 auto;
+  padding: 3.125rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--green-85, #e5f5bd);
+  background: var(--green-95, #f6fbe9);
+  display: grid;
+  grid-template-rows: auto; /* Header height will be determined by content */
+  gap: 1rem;
+}
+
+.gridHeader {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  gap: 1rem;
+  font-size: 1.3rem;
+}
+.gridBody {
+  overflow: scroll;
+}
+.gridRow {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.data-container {
+  border-radius: 0.5rem;
+  background: var(--dark-green-20, #234338);
+  color: var(--absolute-white, #fff);
+  font-family: "Urbanist", sans-serif;
+  font-weight: 500;
+  padding: 1rem;
+  white-space: normal;
+}
+
+.first-col,
+.second-col,
+.third-col {
+  font-family: "Urbanist", sans-serif;
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid transparent;
+}
+
+.first-col {
+  margin-left: 1.5rem;
+  padding-left: 2rem;
+  text-align: start;
+}
+.title {
+  width: 80%;
+
+  text-align: center;
+  font-family: "Urbanist", sans-serif;
+
+  margin: 2rem auto;
+}
+.sub-category {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.description {
+  font-size: 1.5rem;
+
+  padding-left: 1rem;
+  padding-right: 1rem;
+}

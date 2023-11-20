@@ -37,4 +37,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 bun.lockb
-/prisma/generated
+
+prisma/generated
+prisma/migrations
