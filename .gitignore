@@ -4,7 +4,9 @@
 /node_modules
 /.pnp
 .pnp.js
-
+prisma/generated/*
+prisma/migrations/*
+prisma/generated/
 
 # testing
 /coverage
