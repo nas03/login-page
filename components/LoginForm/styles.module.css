@@ -1,9 +1,10 @@
 .login-form {
   width: 25%;
+  font-family: "Urbanist", sans-serif;
+  color: var(--green-97, #fafdf2);
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;

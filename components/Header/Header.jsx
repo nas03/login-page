@@ -1,14 +1,14 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import styles from './styles.module.css'
+import styles from "./styles.module.css";
 import { signOut, useSession } from "next-auth/react";
 import { sign } from "jsonwebtoken";
 
 export default function Header() {
   const { data: session } = useSession();
   return (
-    <div className={styles.header}>
+    <div className={`${styles.header} sticky inset-x-0 top-0`}>
       <div className={styles["nav-bar"]}>
         <div className={styles.logo}>
           <Image src="/svg/logo.svg" width={34} height={34} alt="logo" />
@@ -28,7 +28,7 @@ export default function Header() {
               <Link href="/dashboard/about">About</Link>
             </li>
             <li>
-              <Link href="/dashboard/food-list">Food</Link>
+              <Link href="/dashboard/food">Food</Link>
             </li>
           </ul>
           {!session ? (

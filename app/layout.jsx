@@ -11,10 +11,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="h-screen">
-      <body className={inter.className}>
+      <body className={`${inter.className} relative h-full`}>
         <AuthProvider>
-          <Header />
-          {children}
+          <main className="relative flex min-h-screen flex-col">
+            <Header />
+            <div className="flex-1 flex-grow">{children}</div>
+          </main>
         </AuthProvider>
       </body>
     </html>

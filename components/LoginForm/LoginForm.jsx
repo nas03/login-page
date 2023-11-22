@@ -35,7 +35,7 @@ export default function LoginForm() {
   };
 
   return (
-    <div className={styles["login-form"]} >
+    <div className={styles["login-form"]}>
       <Image
         src="/svg/logo.svg"
         alt="icon"
@@ -55,7 +55,7 @@ export default function LoginForm() {
           type="text"
           name="email"
           id="email"
-          className="mb-5 mt-5 border-2 border-slate-300 pb-2 pl-5 pr-5 pt-2 text-sm text-black"
+          className="mb-5 ml-3 mt-5 w-10/12 border-2 border-slate-300 pb-2 pl-5 pr-5 pt-2 text-sm text-black"
           placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -64,7 +64,7 @@ export default function LoginForm() {
           type="password"
           name="password"
           id="password"
-          className="border-2 border-slate-300 pb-2 pl-5 pr-5 pt-2 text-sm text-black"
+          className="ml-3 w-10/12 border-2 border-slate-300 pb-2 pl-5 pr-5 pt-2 text-sm text-black"
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
         />

@@ -8,7 +8,7 @@ import { cache } from "react";
 export const revalidate = 3600;
 
 const Category = ({ category }) => (
-  <div className={foodStyles["category-container"]} key={category.id}>
+  <div className={`${foodStyles["category-container"]}`} key={category.id}>
     <p className={`${foodStyles["category-title"]} dark-gray text-3xl`}>
       {category.main_category}
     </p>
@@ -31,7 +31,7 @@ async function Food({ category }) {
 
 const FoodItem = ({ data }) => (
   <Link
-    href={`/dashboard/food-list/${data.slug}`}
+    href={`/dashboard/food/${data.slug}`}
     className={`${foodStyles["food-category-container"]}`}
     key={data.id}
     passHref

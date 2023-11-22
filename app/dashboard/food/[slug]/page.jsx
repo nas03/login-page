@@ -2,7 +2,7 @@ import getConfig from "next/config";
 import * as Prisma from "@/prisma/PrismaServices";
 import { cache } from "react";
 import style from "./styles.module.css";
-
+import Header from "@/components/Header/Header";
 export const revalidate = 3600;
 
 export default async function FoodCategory({ params: { slug } }) {
@@ -10,6 +10,7 @@ export default async function FoodCategory({ params: { slug } }) {
   const subCategory = await Prisma.getSubcategoryBySlug(slug);
   return (
     <>
+    <Header/>
       <div className={`${style["container"]}`}>
         <div className={style.title}>
           <h1 className={`${style["sub-category"]}`}>

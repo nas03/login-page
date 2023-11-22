@@ -8,12 +8,13 @@ const prisma = new PrismaClient();
 // Main Categories
 export const createMainCategory = async (mainCategoryName) => {
   try {
-    return await prisma.mainCategory.create({
+    const data = await prisma.mainCategory.create({
       data: {
         main_category: mainCategoryName,
       },
     });
     cleanup();
+    return data;
   } catch (error) {
     console.error("Error creating main category:", error);
     throw error;
@@ -22,12 +23,13 @@ export const createMainCategory = async (mainCategoryName) => {
 
 export const getMainCategories = cache(async () => {
   try {
-    return await prisma.mainCategory.findMany({
+    const data = await prisma.mainCategory.findMany({
       orderBy: {
         id: "asc",
       },
     });
     cleanup();
+    return data;
   } catch (error) {
     console.error("Error fetching main categories:", error);
     throw error;
@@ -36,13 +38,14 @@ export const getMainCategories = cache(async () => {
 
 export const updateMainCategory = async (id, mainCategoryName) => {
   try {
-    return await prisma.mainCategory.update({
+    const data = await prisma.mainCategory.update({
       where: { id },
       data: {
         main_category: mainCategoryName,
       },
     });
     cleanup();
+    return data;
   } catch (error) {
     console.error("Error updating main category:", error);
     throw error;
@@ -51,9 +54,11 @@ export const updateMainCategory = async (id, mainCategoryName) => {
 
 export const deleteMainCategory = async (id) => {
   try {
-    return await prisma.mainCategory.delete({
+    const data = await prisma.mainCategory.delete({
       where: { id },
     });
+    cleanup();
+    return data;
   } catch (error) {
     console.error("Error deleting main category:", error);
     throw error;
@@ -68,7 +73,7 @@ export const createSubCategory = async (
   slug,
 ) => {
   try {
-    return await prisma.subCategory.create({
+    const data = await prisma.subCategory.create({
       data: {
         mainCategoryId,
         sub_category: subCategoryName,
@@ -76,6 +81,8 @@ export const createSubCategory = async (
         slug,
       },
     });
+    cleanup();
+    return data;
   } catch (error) {
     console.error("Error creating subcategory:", error);
     throw error;
@@ -84,11 +91,13 @@ export const createSubCategory = async (
 
 export const getSubCategoriesByMainCategory = cache(async (category) => {
   try {
-    return await prisma.subCategory.findMany({
+    const data = await prisma.subCategory.findMany({
       where: {
         main_category: category,
       },
     });
+    cleanup();
+    return data;
   } catch (error) {
     console.error("Error fetching subcategories:", error);
     throw error;
@@ -102,7 +111,7 @@ export const updateSubCategory = async (
   slug,
 ) => {
   try {
-    return await prisma.subCategory.update({
+    const data = await prisma.subCategory.update({
       where: { id },
       data: {
         sub_category: subCategoryName,
@@ -110,6 +119,8 @@ export const updateSubCategory = async (
         slug,
       },
     });
+    cleanup();
+    return data;
   } catch (error) {
     console.error("Error updating subcategory:", error);
     throw error;
@@ -118,9 +129,11 @@ export const updateSubCategory = async (
 
 export const deleteSubCategory = async (id) => {
   try {
-    return await prisma.subCategory.delete({
+    const data = await prisma.subCategory.delete({
       where: { id },
     });
+    cleanup();
+    return data;
   } catch (error) {
     console.error("Error deleting subcategory:", error);
     throw error;
@@ -130,7 +143,7 @@ export const deleteSubCategory = async (id) => {
 // Foods
 export const createFood = async (subCategoryId, foodName, calories, slug) => {
   try {
-    return await prisma.food.create({
+    const data = await prisma.food.create({
       data: {
         subCategoryId,
         food: foodName,
@@ -138,6 +151,8 @@ export const createFood = async (subCategoryId, foodName, calories, slug) => {
         slug,
       },
     });
+    cleanup();
+    return data;
   } catch (error) {
     console.error("Error creating food:", error);
     throw error;
@@ -146,7 +161,7 @@ export const createFood = async (subCategoryId, foodName, calories, slug) => {
 
 export const getFoodBySlug = cache(async (slug) => {
   try {
-    return await prisma.food.findMany({
+    const data = await prisma.food.findMany({
       where: {
         slug: {
           equals: decodeURIComponent(slug),
@@ -157,6 +172,8 @@ export const getFoodBySlug = cache(async (slug) => {
         calories: true,
       },
     });
+    cleanup();
+    return data;
   } catch (error) {
     console.error("Error fetching food by slug:", error);
     throw error;
@@ -165,7 +182,7 @@ export const getFoodBySlug = cache(async (slug) => {
 
 export const updateFood = async (id, foodName, calories, slug) => {
   try {
-    return await prisma.food.update({
+    const data = await prisma.food.update({
       where: { id },
       data: {
         food: foodName,
@@ -173,6 +190,8 @@ export const updateFood = async (id, foodName, calories, slug) => {
         slug,
       },
     });
+    cleanup();
+    return data;
   } catch (error) {
     console.error("Error updating food:", error);
     throw error;
@@ -181,9 +200,11 @@ export const updateFood = async (id, foodName, calories, slug) => {
 
 export const deleteFood = async (id) => {
   try {
-    return await prisma.food.delete({
+    const data = await prisma.food.delete({
       where: { id },
     });
+    cleanup();
+    return data;
   } catch (error) {
     console.error("Error deleting food:", error);
     throw error;
@@ -192,7 +213,7 @@ export const deleteFood = async (id) => {
 
 export const getSubcategoryBySlug = async (slug) => {
   try {
-    return await prisma.subCategory.findFirst({
+    const data = await prisma.subCategory.findFirst({
       where: {
         slug: {
           equals: slug,
@@ -203,6 +224,8 @@ export const getSubcategoryBySlug = async (slug) => {
         description: true,
       },
     });
+    cleanup();
+    return data;
   } catch (error) {
     console.error("Error get subCategory by slug", error);
     throw error;
