@@ -1,5 +1,6 @@
 .category-container {
   position: relative;
+  
   left: 50%;
   width: 91.6667%;
   transform: translateX(-50%);

@@ -10,7 +10,6 @@ export default async function FoodCategory({ params: { slug } }) {
   const subCategory = await Prisma.getSubcategoryBySlug(slug);
   return (
     <>
-    <Header/>
       <div className={`${style["container"]}`}>
         <div className={style.title}>
           <h1 className={`${style["sub-category"]}`}>
@@ -18,7 +17,7 @@ export default async function FoodCategory({ params: { slug } }) {
           </h1>
           <p className={`${style.description}`}>{subCategory.description}</p>
         </div>
-        <div className={`${style.gridContainer}`}>
+        <div className={(style.table)}>
           <div className={`${style.gridHeader} ${style.gridRow}`}>
             <div className={`${style["first-col"]} ${style["data-container"]}`}>
               <p>Food</p>
@@ -32,17 +31,18 @@ export default async function FoodCategory({ params: { slug } }) {
               <p>Calories</p>
             </div>
           </div>
+
           <div className={`${style.gridBody}`}>
             {prismaData.map((food) => (
               <div key={food.id} className={`${style.gridRow}`}>
                 <div className={`${style["first-col"]}`}>
-                  <p>{food.food}</p>
+                  <p key={food.food}>{food.food}</p>
                 </div>
                 <div className={`${style["second-col"]}`}>
                   <p>100g</p>
                 </div>
                 <div className={`${style["third-col"]}`}>
-                  <p>{food.calories}</p>
+                  <p key={food.calories}>{food.calories}</p>
                 </div>
               </div>
             ))}

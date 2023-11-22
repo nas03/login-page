@@ -4,26 +4,27 @@
   margin-left: auto;
   margin-right: auto;
 }
-.gridContainer {
-  height: 45rem;
-  margin: 0 auto;
-  padding: 3.125rem;
-  border-radius: 0.75rem;
+.table {
   border: 1px solid var(--green-85, #e5f5bd);
   background: var(--green-95, #f6fbe9);
-  display: grid;
-  grid-template-rows: auto; /* Header height will be determined by content */
-  gap: 1rem;
+  margin: 0 auto;
+  padding: 3.125rem;
+  width: 80%;
 }
-
 .gridHeader {
   display: grid;
   grid-template-columns: 3fr 1fr 1fr;
   gap: 1rem;
   font-size: 1.3rem;
+  height: fit-content;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--green-95, #f6fbe9);
 }
 .gridBody {
   overflow: scroll;
+  height: 40rem;
 }
 .gridRow {
   display: grid;
@@ -38,7 +39,7 @@
   font-family: "Urbanist", sans-serif;
   font-weight: 500;
   padding: 1rem;
-  white-space: normal;
+  height: fit-content;
 }
 
 .first-col,
@@ -57,10 +58,8 @@
 }
 .title {
   width: 80%;
-
   text-align: center;
   font-family: "Urbanist", sans-serif;
-
   margin: 2rem auto;
 }
 .sub-category {
@@ -69,7 +68,6 @@
 }
 .description {
   font-size: 1.5rem;
-
   padding-left: 1rem;
   padding-right: 1rem;
 }
