@@ -1,0 +1,61 @@
+.footer {
+  display: flex;
+  width: 90rem;
+  padding: 2.5rem 5rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2.5rem;
+  border-top: 1px solid var(--grey-15, #262626);
+  background: var(--dark-green-15, #1a3129);
+}
+.top-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+}
+.logo {
+  display: flex;
+  width: 8.10938rem;
+  padding-right: 0px;
+  justify-content: center;
+  align-items: center;
+  gap: 0.32425rem;
+}
+.to-top-page {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  border-radius: 0.75rem;
+}
+.navigate {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: absolute;
+  right: 28.21875rem;
+  bottom: 0.8125rem;
+}
+.bot-footer {
+  display: flex;
+  padding: 0.875rem 1.625rem 0.875rem 1rem;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  border-radius: 0.5rem;
+  border: 1px solid var(--dark-green-25, #2c5446);
+  background: var(--dark-green-20, #234338);
+}
+.contact {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  color: var(--grey-95, #f2f2f2);
+  font-family: Urbanist;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 1.3125rem */
+}
+.cite {
+}
