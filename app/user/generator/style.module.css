@@ -1,0 +1,51 @@
+.table {
+  border: 1px solid var(--green-85, #e5f5bd);
+  background: var(--green-95, #f6fbe9);
+  margin: 0 auto;
+  padding: 3.125rem;
+  width: 70%;
+}
+.gridHeader {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  gap: 1rem;
+  font-size: 1rem;
+  height: fit-content;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--green-95, #f6fbe9);
+}
+.gridBody {
+  overflow-y: scroll;
+  height: 40rem;
+}
+.gridRow {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.data-container {
+  border-radius: 0.5rem;
+  background: var(--dark-green-20, #234338);
+  color: var(--absolute-white, #fff);
+  font-family: "Urbanist", sans-serif;
+  font-weight: 500;
+  height: fit-content;
+}
+
+.first-col,
+.second-col,
+.third-col {
+  font-family: "Urbanist", sans-serif;
+  text-align: center;
+  padding: 0.5rem;
+  border: 1px solid transparent;
+}
+
+.first-col {
+  margin-left: 1.5rem;
+  text-align: start;
+  padding-left: 2rem;
+}

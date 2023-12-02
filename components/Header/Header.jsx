@@ -11,9 +11,9 @@ export default function Header() {
     <div className={`${styles.header} sticky inset-x-0 top-0`}>
       <div className={styles["nav-bar"]}>
         <div className={styles.logo}>
-          <Image src="/svg/logo.svg" width={34} height={34} alt="logo" />
+          <Image src="/svg/logo/logo.svg" width={34} height={34} alt="logo" />
           <Image
-            src="/svg/logo-name.svg"
+            src="/svg/logo/logo-name.svg"
             width={196}
             height={12}
             alt="logo-name"
@@ -30,6 +30,11 @@ export default function Header() {
             <li>
               <Link href="/dashboard/food">Food</Link>
             </li>
+            {session && (
+              <li>
+                <Link href={"/user/generator"}>Generator</Link>
+              </li>
+            )}
           </ul>
           {!session ? (
             <button className={styles["session-btn"]}>

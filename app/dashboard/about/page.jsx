@@ -8,8 +8,8 @@ const LeftImage = ({ image_url, heading, description, date }) => {
       <Image
         className={style.image}
         src={image_url}
-        width={100}
-        height={100}
+        height={420}
+        width={634}
         alt="pic-1"
       />
       <div className={style.shape}></div>
@@ -20,6 +20,28 @@ const LeftImage = ({ image_url, heading, description, date }) => {
         <p className={style["text-description"]}>{description}</p>
         <p className={style["text-date"]}>{date}</p>
       </div>
+    </div>
+  );
+};
+
+const RightImage = ({ image_url, heading, description, date }) => {
+  return (
+    <div className={style.container}>
+      <div className={`${style["text-container"]} ${style.right}`}>
+        <div className={style["text-head"]}>
+          <p className={style["text-heading"]}>{heading}</p>
+        </div>
+        <p className={style["text-description"]}>{description}</p>
+        <p className={style["text-date"]}>{date}</p>
+      </div>
+      <div className={style.shape}></div>
+      <Image
+        className={style.image}
+        src={image_url}
+        height={420}
+        width={634}
+        alt="pic-1"
+      />
     </div>
   );
 };
@@ -61,6 +83,14 @@ const Page = () => {
         </div>
         <div className={style["wrapper"]}>
           <LeftImage
+            image_url="/images/about/pic-2.png"
+            heading="Inspiring Transformations Story"
+            description={
+              "Nutritionist continues to empower individuals to transform their lives through personalized nutrition coaching. With an expanding client base and a growing team of experts, we remain committed to our goal of helping people lose weight, improve their health, and lead happier, more fulfilling lives. Our journey of inspiring transformations continues, one client at a time."
+            }
+            date={"July 1, 2025"}
+          />
+          <RightImage
             image_url="/images/about/pic-2.png"
             heading="Inspiring Transformations Story"
             description={

@@ -28,7 +28,7 @@ export default function LoginForm() {
         return;
       }
 
-      router.replace("dashboard/home");
+      router.push("/dashboard/home");
     } catch (error) {
       console.log(error);
     }
@@ -37,7 +37,7 @@ export default function LoginForm() {
   return (
     <div className={styles["login-form"]}>
       <Image
-        src="/svg/logo.svg"
+        src="/svg//logo/logo.svg"
         alt="icon"
         width={50}
         height={50}
@@ -45,7 +45,7 @@ export default function LoginForm() {
       />
       <Image
         className="scale-125 self-center pb-3"
-        src="/svg/dark-logo-name.svg"
+        src="/svg/logo/dark-logo-name.svg"
         width={108}
         height={14}
         alt="logo-name"
@@ -64,7 +64,7 @@ export default function LoginForm() {
           type="password"
           name="password"
           id="password"
-          className="ml-3 w-10/12 border-2 border-slate-300 pb-2 pl-5 pr-5 pt-2 text-sm text-black"
+          className="ml-3 w-10/12 border-2 border-slate-300 pb-2 pl-5 pr-5 pt-2 text-sm font-bold tracking-wide text-black"
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
         />

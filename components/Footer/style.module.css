@@ -1,6 +1,6 @@
 .footer {
   display: flex;
-  width: 90rem;
+  width: 100%;
   padding: 2.5rem 5rem;
   flex-direction: column;
   align-items: flex-start;
@@ -28,14 +28,43 @@
   gap: 0.875rem;
   border-radius: 0.75rem;
 }
+.to-top-page > p {
+  color: var(--absolute-white, #fff);
+  font-family: Urbanist;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 1.5rem */
+}
+.to-top-page > div {
+  display: flex;
+  padding: 0.75rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.625rem;
+}
 .navigate {
   display: flex;
   align-items: center;
   gap: 1rem;
-  position: absolute;
-  right: 28.21875rem;
-  bottom: 0.8125rem;
 }
+.navigate :nth-child(n) {
+  color: var(--absolute-white, #fff);
+  font-family: Urbanist;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 1.3125rem */
+}
+.btn-container {
+  display: flex;
+  padding: 0.75rem;
+  align-items: center;
+  gap: 0.25rem;
+  border-radius: 0.25rem;
+  border: 1px solid var(--dark-green-25, #2c5446);
+}
+
 .bot-footer {
   display: flex;
   padding: 0.875rem 1.625rem 0.875rem 1rem;
@@ -58,4 +87,10 @@
   line-height: 150%; /* 1.3125rem */
 }
 .cite {
+  color: var(--grey-95, #f2f2f2);
+  font-family: Urbanist;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 1.3125rem */
 }

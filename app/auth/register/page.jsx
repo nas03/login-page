@@ -32,14 +32,14 @@ export default function Page() {
       <Header />
       <div className="relative ml-auto mr-auto mt-10 flex w-1/4 flex-col justify-center border-2 border-black p-5 pl-7 pr-7">
         <Image
-          src="/svg/logo.svg"
+          src="/svg/logo/logo.svg"
           alt="icon"
           width={90}
           height={90}
           className="self-center"
         />
         <span className="mb-5 mt-2 self-center text-xl">
-          Obesity Controller
+          Nutritionist
         </span>
         <form className="flex flex-col justify-center" action={submitHandler}>
           <input
