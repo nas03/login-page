@@ -38,7 +38,7 @@ const FoodItem = ({ data }) => (
   >
     <Image
       className={`${foodStyles["food-thumbnail"]}`}
-      src={`/images/${data.slug}.webp`}
+      src={`/images/food/${data.slug}.webp`}
       alt={data.slug}
       height={100}
       width={200}

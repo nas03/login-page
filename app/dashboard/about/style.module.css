@@ -1,0 +1,135 @@
+
+.header {
+  display: flex;
+  width: 80rem;
+  padding: 5rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  border-radius: 0.625rem;
+  border: 1px solid var(--green-85, #e5f5bd);
+  background: var(--green-95, #f6fbe9);
+}
+.heading {
+  align-self: stretch;
+  color: var(--grey-15, #262626);
+  text-align: center;
+  font-family: Urbanist;
+  font-size: 2.375rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 3.5625rem */
+}
+.description {
+  align-self: stretch;
+  color: var(--grey-20, #333);
+  text-align: center;
+  font-family: Urbanist;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 1.5rem */
+}
+.story {
+  display: flex;
+  width: 80rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3.75rem;
+}
+.story-head {
+  display: flex;
+  padding: 0rem 15.625rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: stretch;
+}
+.story-heading {
+  color: var(--grey-15, #262626);
+  align-self: stretch;
+  text-align: center;
+  font-family: Urbanist;
+  font-size: 2.375rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 3.5625rem */
+}
+.story-description {
+  color: var(--grey-20, #333);
+  text-align: center;
+  font-family: Urbanist;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 1.5rem */
+  align-self: stretch;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    align-self: stretch;
+    border-radius: 0.75rem;
+    border: 1px solid var(--green-90, #eef8d3);
+  }
+  
+.container {
+    display: flex;
+    align-items: flex-start;
+    align-self: stretch;
+}
+.shape {
+  width: 0.75rem;
+  align-self: stretch;
+  background: var(--green-70, #cbea7b);
+}
+.image {
+  height: 26.25rem;
+  flex: 1 0 0;
+}
+.text-container {
+  display: flex;
+  padding: 3.75rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.875rem;
+  flex: 1 0 0;
+  align-self: stretch;
+  background: #f6fbe9;
+}
+.text-head {
+  display: flex;
+  padding: 0.5rem 0rem;
+  align-items: center;
+  gap: 0.625rem;
+  border-bottom: 3px solid var(--green-70, #cbea7b);
+}
+.text-heading {
+  color: var(--dark-green-15, #1a3129);
+  font-family: Urbanist;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.text-description {
+  align-self: stretch;
+  color: var(--grey-20, #333);
+  font-family: Urbanist;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 1.5rem */
+}
+.text-date {
+  align-self: stretch;
+  color: var(--grey-20, #333);
+  font-family: Urbanist;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 1.5rem */
+}
