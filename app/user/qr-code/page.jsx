@@ -5,6 +5,7 @@ import React from "react";
 import { Space, Table, Tag } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import { Modal } from "antd";
+import SearchIcon from "@mui/icons-material/Search";
 
 const nutritionData = {
   perServing: {
@@ -54,6 +55,9 @@ const Page = () => {
           onClick={showModal}
           className="text-md mb-3  mt-5 rounded-md bg-[#234338] pb-3 pl-5 pr-5 pt-3 font-bold text-white hover:cursor-pointer"
         >
+          <span>
+            <SearchIcon />
+          </span>
           Scan
         </button>
         <Modal
