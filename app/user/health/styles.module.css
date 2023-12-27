@@ -1,0 +1,29 @@
+.login-form {
+  width: 25%;
+  font-family: "Urbanist", sans-serif;
+  color: var(--green-97, #fafdf2);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px solid black;
+  padding: 5px;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+.header {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  width: 80rem;
+  padding: 5rem;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  gap: 2.5rem;
+  border-radius: 0.625rem;
+  border: 1px solid var(--green-85, #e5f5bd);
+  background: var(--green-95, #f6fbe9);
+}

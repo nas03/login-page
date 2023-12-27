@@ -1,4 +1,3 @@
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import style from "./style.module.css";
 import Image from "next/image";
 
@@ -50,7 +49,7 @@ const Page = () => {
     <>
       <div className={`${style.header}`}>
         <p className={`${style.heading}`}>Welcome to Nutritionist</p>
-        <p className={`${style.description}`}>
+        <p className={`${style.description} text-center`}>
           Your trusted source for personalized nutrition coaching. Our mission
           is to help you achieve your weight loss and health goals through
           tailored nutrition plans and expert guidance. We understand that every
