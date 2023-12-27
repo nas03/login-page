@@ -1,5 +1,4 @@
 // Importing necessary modules
-import { useSession } from "next-auth/react";
 import foodStyles from "./styles.module.css"; // Update this with the correct path to your CSS module
 import Link from "next/link";
 import Image from "next/image";

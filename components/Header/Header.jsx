@@ -2,11 +2,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./styles.module.css";
-import { signOut, useSession } from "next-auth/react";
-import { sign } from "jsonwebtoken";
 
 export default function Header() {
-  const { data: session } = useSession();
   return (
     <div className={`${styles.header} sticky inset-x-0 top-0`}>
       <div className={styles["nav-bar"]}>
@@ -30,27 +27,15 @@ export default function Header() {
             <li>
               <Link href="/dashboard/food">Food</Link>
             </li>
-            {session && (
-              <li>
-                <Link href={"/user/generator"}>Generator</Link>
-              </li>
-            )}
+
+            <li>
+              <Link href={"/user/generator"}>Generator</Link>
+            </li>
           </ul>
-          {!session ? (
-            <button className={styles["session-btn"]}>
-              <Link href="/auth/login">Sign in</Link>
-            </button>
-          ) : (
-            <button
-              className={styles["session-btn"]}
-              onClick={() => {
-                signOut();
-                console.log("Sign out", session);
-              }}
-            >
-              Sign out
-            </button>
-          )}
+
+          <button className={styles["session-btn"]}>
+            <Link href="/auth/login">Sign in</Link>
+          </button>
         </div>
       </div>
     </div>
